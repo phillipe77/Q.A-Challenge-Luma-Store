@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:addToCart": "npx cypress run --spec cypress/e2e/tests/addtoCartTest.cy.js"
+    "test:addToCart": "npx cypress run --spec cypress/e2e/tests/addtoCartTest.cy.js",
+    "test:register":  "npx cypress run --spec cypress/e2e/tests/registerTest.cy.js",
+    "test:searchShirt":  "npx cypress run --spec cypress/e2e/tests/addtoCartTest.cy.js"
   },
   "repository": {
     "type": "git",
