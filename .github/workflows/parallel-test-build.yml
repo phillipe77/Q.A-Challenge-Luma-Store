@@ -43,8 +43,7 @@ jobs:
         with:
           name: Mochawesome HTML Report - Reg Flow
           path: cypress/reports/html   
-    
-    Search-Flow-run:  # Novo job adicionado
+  Search-Flow-run:  # Novo job corrigido
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
