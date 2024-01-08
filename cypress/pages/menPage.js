@@ -38,6 +38,7 @@ export class menPage {
     }
 
     selectRandomSizeAndColor() {
+        cy.wait(2000);
         cy.get(this.weblocators.sizeOptions).then($sizes => {
             const randomSizeIndex = Math.floor(Math.random() * $sizes.length);
             cy.wrap($sizes[randomSizeIndex]).click();
@@ -51,6 +52,7 @@ export class menPage {
     addToCart() {
         cy.wait(2000); // Espera para carregar opções de tamanho e cor
         cy.get(this.weblocators.addToCartButton).click();
+        cy.wait(3000); // Espera explícita de 5 segundos
     }
 
     verifyProductAddedToCart() {
