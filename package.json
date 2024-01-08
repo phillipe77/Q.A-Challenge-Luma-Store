@@ -1,0 +1,30 @@
+{
+  "name": "q.a-challenge-luma-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:addToCart": "npx cypress run --spec cypress/e2e/tests/addtoCartTest.cy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillipe77/Q.A-Challenge-Luma-Store.git"
+  },
+  "author": "Phillipe Linhares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phillipe77/Q.A-Challenge-Luma-Store/issues"
+  },
+  "homepage": "https://github.com/phillipe77/Q.A-Challenge-Luma-Store#readme",
+  "devDependencies": {
+    "cypress": "^13.6.2",
+    "cypress-mochawesome-reporter": "^3.8.0",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "buffer": "^6.0.3",
+    "node-fetch": "^3.3.2"
+  }
+}
