@@ -43,4 +43,21 @@ jobs:
         with:
           name: Mochawesome HTML Report - Reg Flow
           path: cypress/reports/html   
-  
+    
+    Search-Flow-run:  # Novo job adicionado
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+         command: npm run test:searchShirt  
+
+      - name: Cypress Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Mochawesome HTML Report - Payment Flow
+          path: cypress/reports/html
