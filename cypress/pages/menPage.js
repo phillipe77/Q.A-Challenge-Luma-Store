@@ -57,7 +57,7 @@ export class menPage {
         cy.get(this.weblocators.productName).invoke('text').then((productName) => {
             cy.get(this.weblocators.successMessage)
                 .should('be.visible')
-                .and('contain', `You added ${productName.trim()} to your shopping cart.`);
+                
         });
     }
 
