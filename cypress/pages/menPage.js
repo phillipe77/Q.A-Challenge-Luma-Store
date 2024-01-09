@@ -16,7 +16,7 @@ export class menPage {
     }
 
     openHomepage() {
-        cy.visit('menPageUrl');
+        cy.visit(Cypress.env('menPageUrl'));
         cy.get('h1.page-title').should('contain', 'Men');
     }
 

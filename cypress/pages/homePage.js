@@ -10,7 +10,7 @@ export class searchShirtHomePage {
     }
 
     openHomepage() {
-        cy.visit('homePageUrl');
+        cy.visit(Cypress.env('homePageUrl'));
     }
 
     verifyHomepageElements() {
