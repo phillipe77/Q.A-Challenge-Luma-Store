@@ -8,6 +8,8 @@
 > Status do Projeto: :heavy_check_mark: (Concluído)
 > 
 
+Link apresentação: https://www.loom.com/share/df39b92397d84eb39185b07bc56dad46?sid=a19c5826-8f5a-4345-8198-5eb66644c0ed
+
 ### Tópicos
 
 :small_blue_diamond: [Descrição do projeto](https://www.notion.so/704ef48b065a4981826c544dec88ee00)
