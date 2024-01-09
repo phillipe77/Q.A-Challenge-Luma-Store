@@ -10,3 +10,10 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+
+      - name: Cypress Test Report
+        if: always()
+        uses: actions/upload-artifact@v3 
+        with:
+          name: Mochawesome HTML Report
+          path: cypress/reports/html   
