@@ -16,7 +16,8 @@ export class menPage {
     }
 
     openHomepage() {
-        cy.visit('https://magento.softwaretestingboard.com/men.html');
+        cy.visit('menPageUrl');
+        cy.get('h1.page-title').should('contain', 'Men');
     }
 
     selectRandomCategory() {
@@ -24,6 +25,7 @@ export class menPage {
             const randomIndex = Math.floor(Math.random() * $links.length);
             const selectedCategoryHref = $links[randomIndex].getAttribute('href');
             cy.visit(selectedCategoryHref);
+            cy.url().should('include', 'men'); // Verifica se a URL inclui '/men'
         });
     }
 
@@ -33,6 +35,7 @@ export class menPage {
             const selectedProduct = $items[randomIndex];
             cy.wrap(selectedProduct).find('a.product-item-link').as('productLink');
         cy.get('@productLink').click();
+        cy.get(this.weblocators.productName).should('be.visible');
 
         });
     }
@@ -52,7 +55,9 @@ export class menPage {
     addToCart() {
         cy.wait(2000); // Espera para carregar opções de tamanho e cor
         cy.get(this.weblocators.addToCartButton).click();
-        cy.wait(3000); // Espera explícita de 5 segundos
+        cy.wait(4000); // Espera explícita de 5 segundos
+        cy.get('.message-success').should('be.visible'); // Confirmação de sucesso
+        
     }
 
     verifyProductAddedToCart() {
@@ -73,6 +78,7 @@ export class menPage {
         cy.get(this.weblocators.nicknameField).type(`User${Math.floor(Math.random() * 1000)}`);
         cy.get(this.weblocators.summaryField).type('Ótimo produto, atendeu bem as expectativas.');
         cy.get(this.weblocators.reviewField).type('Produto com material muito bom, estou agora comprando de outra cor pois gostei bastante.');
+        cy.get('.message-success').should('be.visible'); // Confirmação de sucesso
     }
     
 

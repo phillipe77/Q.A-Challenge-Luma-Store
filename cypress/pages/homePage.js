@@ -10,27 +10,32 @@ export class searchShirtHomePage {
     }
 
     openHomepage() {
-        cy.visit('https://magento.softwaretestingboard.com');
+        cy.visit('homePageUrl');
     }
 
     verifyHomepageElements() {
         cy.get(this.weblocators.logo).should('be.visible');
-        // Adicione outras verificações para elementos da homepage conforme necessário
+        cy.get(this.weblocators.searchBar).should('exist');
+        cy.get(this.weblocators.searchButton).should('be.enabled');
     }
 
     searchForItem(item) {
-        cy.get(this.weblocators.searchBar).type(item);
+        cy.get(this.weblocators.searchBar).type(item).should('have.value', item);
         cy.get(this.weblocators.searchButton).click();
     }
 
     checkSearchResults() {
         cy.get(this.weblocators.searchResultsTitle)
-            .should('contain', "Search results for: 'shirt'");
+            .should('contain', "Search results for: 'shirt'")
+            .and('be.visible');
+        cy.get('.products-grid').should('have.length.at.least', 1); // Verifica se ao menos um produto é exibido
     }
-
+    
     clickOnLastSuggestedProduct() {
         cy.get(this.weblocators.lastProductImage).last().click();
         cy.get(this.weblocators.productInfo).should('be.visible');
+        cy.url().should('include', 'shirt'); // Verifica se a URL contém 'shirt'
+
     }
 
 }

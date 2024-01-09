@@ -11,19 +11,18 @@ export class registerPage {
 
     openURL() {
 
-        cy.visit(Cypress.env('URL'))
+        cy.visit(Cypress.env('registerPageUrl'))
     }
     enterFirstName(FName) {
-
-        cy.get(this.weblocators.firstName).type(FName)
+        cy.get(this.weblocators.firstName).type(FName).should('have.value', FName);
     }
     enterlastName(LName) {
 
-        cy.get(this.weblocators.lastName).type(LName)
+        cy.get(this.weblocators.lastName).type(LName).should('have.value',LName);
     }
     enterEmail(email) {
 
-        cy.get(this.weblocators.email).type(email)
+        cy.get(this.weblocators.email).type(email).should('have.value',email);
     }
     enterPassword(password) {
 
@@ -33,7 +32,8 @@ export class registerPage {
     }
 
     clickOncreatAccountButton() {
-        cy.get(this.weblocators.creatAccountButton).click()
+        cy.get(this.weblocators.creatAccountButton).click();
+        cy.get('.message-success').should('be.visible'); // Confirmação de sucesso
     }
 
 }

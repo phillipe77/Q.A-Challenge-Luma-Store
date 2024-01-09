@@ -2,16 +2,19 @@
 import { searchShirtHomePage } from '../../pages/homePage';
 
 // Corrigindo o nome da instância da classe
-const searchShirtTest = new searchShirtHomePage();
+const searchShirtObj = new searchShirtHomePage();
 
-describe('Homepage Shirt Search Test', () => {
+describe('Test Automation - Homepage Shirt Search Test', () => {
+    before(() => {
+        searchShirtObj.openHomepage(); 
+    });
 
-    it('search shirt flow', () => {
-        searchShirtTest.openHomepage();
-        searchShirtTest.verifyHomepageElements();
-        searchShirtTest.searchForItem('shirt');
-        searchShirtTest.checkSearchResults();
-        searchShirtTest.clickOnLastSuggestedProduct();
+    it('should complete the search shirt ', () => {
+        searchShirtObj.verifyHomepageElements();
+        searchShirtObj.searchForItem('shirt');
+        searchShirtObj.checkSearchResults();
+        searchShirtObj.clickOnLastSuggestedProduct();
+       
     });
 
 });

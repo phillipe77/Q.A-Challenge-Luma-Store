@@ -28,6 +28,8 @@ module.exports = defineConfig({
     },
   },
   env: {
-    URL: 'https://magento.softwaretestingboard.com/customer/account/create/'
+    registerPageUrl: 'https://magento.softwaretestingboard.com/customer/account/create/',
+    menPageUrl: 'https://magento.softwaretestingboard.com/men.html',
+    homePageUrl: 'https://magento.softwaretestingboard.com',
   }
 });
